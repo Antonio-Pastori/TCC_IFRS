@@ -1,11 +1,11 @@
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
 html{
     height: 100%;
     width: 100%;
 }
 body{
-    min-height: 100%;
+    max-height: 100%;
     margin: 0;
     padding: 0;
     background-color: #121111;
@@ -19,7 +19,7 @@ body{
 /*Index*/
 
 content{
-    min-width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -65,7 +65,7 @@ header{
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 30px;
-    width: 100%;
+    width: 95%;
     position: fixed;
     top: 3%;
 }
@@ -80,7 +80,7 @@ header{
 }
 
 #barrap{
-    width: 47vh;
+    width: 45vh;
     border-radius: 9px;
     height: 35px;
     background-color: #545454;
@@ -89,4 +89,73 @@ header{
     margin-top: 20px;
 }
 
+.seletor-container {
+    overflow: hidden;
+    width: 95%; /* Largura visível do seletor */
+    margin-top: 5%;
+  }
+  
+  .seletor {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .seletor::-webkit-scrollbar {
+    display: none; /* Remover a barra de rolagem no Chrome, Safari, etc. */
+  }
+  
+  .categorias {
+    display: flex;
+  }
+  
+  .option {
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+    opacity: 40%;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+  }
+
+  #Flores{
+    background-image: url("../Imagens/Flores.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #Ornamentais{
+    background-image: url("../Imagens/Ornamentais.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #Frutiferas{
+    background-image: url("../Imagens/Frutas.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #ChasTemp{
+    background-image: url("../Imagens/chastemp.jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #hortaliças{
+    background-image: url("../Imagens/Hortaliças.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #Suculentas{
+    background-image: url("../Imagens/Suculentas.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
