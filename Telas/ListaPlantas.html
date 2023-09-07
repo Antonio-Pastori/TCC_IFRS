@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../Style/Master.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Guia das Plantas</title>
+</head>
+<body>
+        <header :class="{ 'scrolled-down': scrolled }">
+            <img src="../Imagens/Logo App Branco.png" id="logop">
+            <div id="perfil"></div>
+        </header>
+        <content>
+            <h1>Flores</h1>
+            <div class="lista">
+                <div v-for="(item, index) in listaP" class="item">
+                    {{item.id}} - {{item.nome}}
+                </div>
+            </div>
+        </content>
+    <script>
+        new Vue({
+            el: '.lista',
+            data: {
+                listaP: [
+                    {
+                        'id' : 1,
+                        'nome': 'planta'
+                    },
+                    {
+                        'id' : 2,
+                        'nome': 'plante'
+                    },
+                    {
+                        'id' : 3,
+                        'nome': 'plantu'
+                    },
+                    {
+                        'id' : 4,
+                        'nome': 'plantae'
+                    },
+                    
+                   
+                ]
+            }
+        })
+    </script>
+    <script src="../Js/List.js"></script>
+</body>
+</html>

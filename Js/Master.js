@@ -26,7 +26,12 @@ selector.addEventListener('touchend', () => {
   animationId = requestAnimationFrame(snapBack);
 });
 
-  
+
+
+
+
+
+
 
 
 

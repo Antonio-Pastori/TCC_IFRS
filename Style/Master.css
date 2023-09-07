@@ -5,29 +5,34 @@ html{
     width: 100%;
 }
 body{
-    max-height: 100%;
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     background-color: #121111;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    margin-top: 30%;
 }
 
 /*Index*/
 
+#indexcontent{
+  margin-top: 30%;
+}
+
 content{
-    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center; 
 }
 
 #logoini{
     width: 300px;
 }
+
 h1{
     color: white;
     font-family: sans-serif;
@@ -61,14 +66,13 @@ h1{
 /*Home*/
 
 header{
+    width: 95%;
+    padding-top: 5vw;
     display: flex;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 30px;
-    width: 95%;
-    position: fixed;
-    top: 3%;
+    
 }
+
 #logop{
     width: 80px;
 }
@@ -80,7 +84,7 @@ header{
 }
 
 #barrap{
-    width: 45vh;
+    width: 93vw;
     border-radius: 9px;
     height: 35px;
     background-color: #545454;
@@ -92,7 +96,7 @@ header{
 .seletor-container {
     overflow: hidden;
     width: 95%; /* Largura visível do seletor */
-    margin-top: 5%;
+    margin-top: 3%;
   }
   
   .seletor {
@@ -115,19 +119,23 @@ header{
     width: 90px;
     height: 90px;
     margin-right: 10px;
-    opacity: 40%;
-    color: white;
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center
+    text-align: center;
+  }
+
+  .textop{
+    color: rgba(255, 255, 255, 1);
+    opacity: 100%;
   }
 
   #Flores{
     background-image: url("../Imagens/Flores.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    opacity: 40%;
   }
   #Ornamentais{
     background-image: url("../Imagens/Ornamentais.jpg");
@@ -157,5 +165,34 @@ header{
     background-image: url("../Imagens/Suculentas.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  #diario{
+    margin-top: 10px;
+    width: 95%;
+    
+    background-color: aliceblue;
+    text-align: center;
+    background-image: url(../Imagens/Ornamentais.jpg);
+    background-size: cover;
+    color: white;
+  }
+
+  /*Lista de Planta*/
+  .lista{
+    width: 90%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    justify-content: center; /* Alinhar itens horizontalmente no centro */
+    align-items: center;
+    
+  }
+
+  .item{
+    background-color: red;
+    width: 30vw;
+    height: 30vw;
   }
 }
