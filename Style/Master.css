@@ -13,6 +13,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 /*Index*/
@@ -175,6 +176,8 @@ header{
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 1);
   }
 
   .textop{
@@ -186,7 +189,7 @@ header{
     background-image: url("../Imagens/Flores.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 40%;
+    
   }
   #Ornamentais{
     background-image: url("../Imagens/Ornamentais.jpg");
@@ -224,9 +227,20 @@ header{
     height: 117vw;
     background-color: aliceblue;
     text-align: center;
-    background-image: url(../Imagens/Ornamentais.jpg);
+    background-image: url(../Imagens/bambu.jpg);
     background-size: cover;
     color: white;
+    border-radius: 5px;
+  }
+
+  #diariocontent{
+    opacity: 100%;
+    font-family: sans-serif;
+    font-size: 12vw;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    
   }
 
   /*Lista de Planta*/
@@ -244,6 +258,7 @@ header{
   .item{
     background-color: red;
     width: 30vw;
-    height: 30vw;
+    height: 40vw;
+    border-radius: 10px;
   }
 }
