@@ -40,7 +40,7 @@ profileButton.addEventListener('click', () => {
 });
 
 voltaButton.addEventListener('click', () => {
-  sidebar.style.right = '-300px';
+  sidebar.style.right = '-70vw';
 })
 
 

@@ -86,8 +86,8 @@ h1{
 .sidebar{
   position: fixed;
   top: 0;
-  right: -300px;
-  width: 300px;
+  right: -70vw;
+  width: 70vw;
   height: 100%;
   background-color: #121111;
   color: white;
@@ -96,6 +96,7 @@ h1{
 }
 
 #conteudoside{
+  width: 70vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,7 +105,7 @@ h1{
 #conteudoside ul{
   padding: 0;
   list-style-type: none;
-  width: 73vw;
+  width: 70vw;
   border-top: 1px solid green;
 
 }
@@ -224,9 +225,9 @@ header{
 
   #diario{
     margin-top: 10px;
-    width: 95%;
-    height: 117vw;
-    background-color: aliceblue;
+    margin-bottom: 10px;
+    width: 95vw;
+    height: 61vh;
     text-align: center;
     background-image: url(../Imagens/bambu.jpg);
     background-size: cover;
