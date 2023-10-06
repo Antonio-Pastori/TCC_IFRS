@@ -12,6 +12,23 @@
             <img src="../Imagens/Logo App Branco.png" id="logop">
             <div id="perfil"></div>
         </header>
+        <div class="sidebar" id="sidebar">
+            <div id="volta">
+                <img src="../Imagens/voltar.png" width="60px" height="60px">
+            </div>
+            <div id="conteudoside">
+                <div id="olau">
+                    <div id="perfilside"></div>
+                    <span>Olá Usuário</span>
+                </div>    
+                <nav>
+                    <ul>
+                        <a href="ListaPlantas.html"><li>Minhas Plantas</li></a>
+                        <a href="Home.html"><li>Home</li></a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         <content>
             <h1>Flores</h1>
             <div class="lista">
@@ -44,7 +61,19 @@
                 ]
             }
         })
+
+        const profileButton = document.getElementById('perfil');
+        const sidebar = document.getElementById('sidebar');
+        const voltaButton = document.getElementById('volta');
+        const main = document.querySelector('content');
+
+        profileButton.addEventListener('click', () => {
+            sidebar.style.right = '0';
+        });
+
+        voltaButton.addEventListener('click', () => {
+            sidebar.style.right = '-70vw';
+        })
     </script>
-    <script src="../Js/List.js"></script>
 </body>
 </html>
