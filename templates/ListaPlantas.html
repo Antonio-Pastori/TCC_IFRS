@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Master.css')}}">
+    <title>Guia das Plantas</title>
+</head>
+<body>
+        <header :class="{ 'scrolled-down': scrolled }">
+            <img src="{{ url_for('static', filename='images/Logo_App_Branco.png')}}" id="logop">
+            <div id="perfil" onclick="Sidebar_Open()"></div>
+        </header>
+        <div class="sidebar" id="sidebar">
+            <div id="volta">
+                <img src="{{ url_for('static', filename='images/voltar.png')}}" width="60px" height="60px">
+            </div>
+            <div id="conteudoside">
+                <div id="olau">
+                    <div id="perfilside"></div>
+                    <span>Olá Usuário</span>
+                </div>    
+                <nav>
+                    <ul>
+                        <li onclick="Entrar_Home()">Home</li></a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <content>
+            <h1>{{categoria}}</h1>
+            <div class="lista">
+                {%for item in Infos_Plantas_Categoria.Infos_Plantas%}
+                <div class="container_item" >
+                    <div class="item" style="background-image: url('{{ Infos_Plantas_Categoria.Infos_Plantas[item].Imagem }}');">
+                    </div>
+                    <p>{{item}}</p>
+                </div>
+                {% endfor %}
+              </div>
+        </content>
+        <script src="../static/js/ListaPlantas.js"></script>
+        <script>
+            console.log("Infos_Plantas_Categoria:", {{ Infos_Plantas_Categoria | tojson | safe }});
+        </script>
+</body>
+</html>

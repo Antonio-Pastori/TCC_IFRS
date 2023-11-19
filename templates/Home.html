@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Master.css')}}">
+    <title>Guia das Plantas</title>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/Logo_App_Branco.png')}}" id="logop">
+        <div id="perfil"  onclick="Sidebar_Open()"></div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <div id="volta">
+            <img src="{{ url_for('static', filename='images/voltar.png')}}" width="60px" height="60px">
+        </div>
+        <div id="conteudoside">
+            <div id="olau">
+                <div id="perfilside"></div>
+                <span>Olá Usuário</span>
+            </div>    
+            <nav>
+            </nav>
+        </div>
+    </div>
+    <content>
+        <form>
+            <input type="text" id="barrap" placeholder="Digite o Nome de Sua Planta">
+        </form>
+        <div class="seletor-container">
+            <div class="seletor">
+                <div class="categorias">
+                    <div class="option" id="Flores" onclick="Define_Categoria()">Flores</div>
+                    <div class="option" id="Ornamentais" onclick="Define_Categoria()">Ornamentais</div>
+                    <div class="option" id="Frutiferas" onclick="Define_Categoria()">Frutíferas</div>
+                    <div class="option" id="ChasTemp" onclick="Define_Categoria()">Chás e Temperos</div>
+                    <div class="option" id="hortalicas" onclick="Define_Categoria()">Hortaliças</div>
+                    <div class="option" id="Suculentas" onclick="Define_Categoria()">Suculentas</div>
+                </div>
+            </div>
+        </div>
+        <div id="diario">
+            <div id="diariocontent">
+                <p>Bambu-da-Sorte</p>
+            </div>
+        </div>
+    </content>
+    <script src="../static/js/Home.js"></script>
+</body>
+</html>

@@ -39,6 +39,7 @@ content{
 
 #logoini{
     width: 300px;
+    height: auto;
 }
 
 h1{
@@ -198,37 +199,37 @@ header{
   }
 
   #Flores{
-    background-image: url("../Imagens/Flores.jpg");
+    background-image: url("../images/Flores.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     
   }
   #Ornamentais{
-    background-image: url("../Imagens/Ornamentais.jpg");
+    background-image: url("../images/Ornamentais.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
 
   #Frutiferas{
-    background-image: url("../Imagens/Frutas.jpg");
+    background-image: url("../images/Frutiferas.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
 
   #ChasTemp{
-    background-image: url("../Imagens/chastemp.jfif");
+    background-image: url("../images/chastemp.jfif");
     background-size: cover;
     background-repeat: no-repeat;
   }
 
-  #hortaliças{
-    background-image: url("../Imagens/Hortaliças.jpg");
+  #hortalicas{
+    background-image: url("../images/Hortaliças.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
 
   #Suculentas{
-    background-image: url("../Imagens/Suculentas.jpg");
+    background-image: url("../images/Suculentas.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -239,7 +240,7 @@ header{
     width: 95vw;
     height: 61vh;
     text-align: center;
-    background-image: url(../Imagens/bambu.jpg);
+    background-image: url(https://drive.google.com/uc?id=134z_fVQ5bSO1LOVwTtSnzyyNd7Vj6q9o); 
     background-size: cover;
     color: white;
     border-radius: 5px;
@@ -268,25 +269,46 @@ header{
   }
 
   .item{
-    background-color: #545454;
-    width: 30vw;
-    height: 40vw;
+    width: 30vw; 
+    height: 20vh;
     border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .container_item{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 30vw;
+  }
+
+  .container_item p{
+    color: white;
+    margin: 0;
+    margin-top: 2vh;
+    font-family: sans-serif;
+    font-size: 4vw;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
   }
 
   /*Planta*/
 
   #conteudo{
-    margin-top: 80%;
-    z-index: 2;
     display: flex;
     flex-direction: column;
-    width: 100%;
+   
     height: 100%;
     color: white;
     font-family: sans-serif;
     background-color: #121111;
     border-radius: 30px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    
   }
 
   h2{
@@ -300,8 +322,9 @@ header{
   #fotoplanta{
     z-index: 1;
     position: fixed;
+    opacity: 50%;
     width: 100%;
-    height: 60%;
+    height: 50%;
     background-image: url(../Imagens/bambu.jpg);
     display: flex;
     align-items: center;
@@ -311,16 +334,43 @@ header{
   #dificuldade{
     display: flex;
     width: 100%;
-    justify-content: space-around;
-    align-items: center;
     
+    align-items: center;
   }
 
   .bola{
-    width: 25px;
-    height: 25px;
+    width: 17px;
+    height: 17px;
     border-radius: 20px;
     border: 3px solid green;
   }
+
+#NomeP{ 
+  width: 100%;
+  margin-left: 10px;
+}
+
+#NomeP p{
+  color: white;
+  font-family: sans-serif;
+  font-size: 5.5vh;
+  
+ 
+}
+
+#voltaP{
+  z-index: 2;
+  position: fixed;
+  left: 0vw;
+  transform: scaleX(-1);
+}
+
+#tudo{
+  z-index: 2;
+  margin-top: 15vh;
+  width: 100vw;
+  height: 100vh;
+
+}
 
 }
