@@ -31,7 +31,7 @@
             <h1>{{categoria}}</h1>
             <div class="lista">
                 {%for item in Infos_Plantas_Categoria.Infos_Plantas%}
-                <div class="container_item" >
+                <div class="container_item" id="{{item}}" onclick="Define_Planta()">
                     <div class="item" style="background-image: url('{{ Infos_Plantas_Categoria.Infos_Plantas[item].Imagem }}');">
                     </div>
                     <p>{{item}}</p>
@@ -40,8 +40,5 @@
               </div>
         </content>
         <script src="../static/js/ListaPlantas.js"></script>
-        <script>
-            console.log("Infos_Plantas_Categoria:", {{ Infos_Plantas_Categoria | tojson | safe }});
-        </script>
 </body>
 </html>

@@ -46,7 +46,6 @@ function Sidebar_Open(){
 
 
 function Direciona_Categoria(categoria) {
-  console.log(categoria);
   window.location.href = '/categorias/' + categoria;
 }
 

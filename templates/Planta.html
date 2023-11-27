@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../Style/Master.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Master.css')}}">
+    <script src="{{ url_for('static', filename='js/Planta.js') }}"></script>
     <title>Document</title>
 </head>
 <body>
     <div id="fotoplanta">
     </div>
     <div id="voltaP">
-        <img src="../Imagens/voltar.png" width="70px" height="70px">
+        <img src="{{ url_for('static', filename='images/voltar.png')}}" width="70px" height="70px" id="voltaButton" onclick="voltar(Json_Infos.Categoria)">
     </div>
     <div id="tudo">
         <div id="NomeP">
-            <p>Bambu-da-Sorte</p>
+            <p id="nomePlanta">Bambu-da-Sorte</p>
         </div>
         <div id="conteudo">
             <h2>Geral</h2>
@@ -31,14 +32,24 @@
                 <div class="bola"></div>
                 <div class="bola"></div>
             </div>
-            <p>Nome Científico:</p>
-            <h2>Cuidados</h2>
-            <p>Solo:</p>
-            <p>Água:</p>
-            <p>Adubação:</p>
-            <h2>Dicas</h2>
+            <p>Nome Científico:<p id="nomeC"></p></p>
+            <h2>Cuidados:</h2>
+            <p>Solo:<p id="solo"></p></p>
+            <p>Água:<p id="agua"></p>
+            <p>Adubação:<p id="adubo"></p>
+            <p>Iluminação:<p id="luz"></p></p>
+            <p>Ambiente:<p id="ambiente"></p></p>
         </div>
     </div>
-    <script src="../Js/Planta.js"></script>
+    
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            Json_Infos = {{ Infos_da_Planta_json | tojson | safe }}
+            Pega_Infos(Json_Infos);
+            
+        });
+    </script>
 </body>
 </html>

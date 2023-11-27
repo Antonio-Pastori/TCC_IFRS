@@ -1,5 +1,5 @@
 from flask_pymongo import PyMongo
-from flask import render_template, request, make_response
+from flask import render_template, request, make_response, jsonify
 from run import app
 
 
@@ -36,4 +36,42 @@ def extrair_id_do_link(imagem):
 def criar_novo_link(id_imagem):
     
     return f'https://drive.google.com/uc?id={id_imagem}'
+
+
+def Planta_Por_Nome(id):
+    mongo = PyMongo(app)
+    if mongo.db:
+        # Atribui sua coleção a uma variável
+        sua_colecao = mongo.db.Plantus
+
+        # Exemplo: Busca todas as plantas na coleção com a categoria fornecida
+        planta = sua_colecao.find_one({"Nome": id})
+        
+        id_imagem = extrair_id_do_link(planta['Imagem'])
+        
+        
+        if planta:
+            # Cria um dicionário com as informações da planta
+            planta_info = {
+                'Nome': planta['Nome'],
+                'NomeCientifico': planta['Nome Científico'],
+                'Cuidados': planta['Cuidados'],
+                'Dificuldade': planta['Dificuldade'],
+                'Luz': planta['Luz'],
+                'Solo': planta['Solo'],
+                'Ambiente': planta['Ambiente'],
+                'Imagem': criar_novo_link(id_imagem),
+                'Categoria': planta['Categoria']
+            }
+
+            # Converte o dicionário para JSON e retorna para o frontend
+            return planta_info
+        else:
+            return jsonify({'mensagem': 'Planta não encontrada'}), 404
+
+        
+        
+        
+        
+        
 
