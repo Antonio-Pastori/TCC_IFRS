@@ -2,7 +2,6 @@
 function Desliza() {
   const options = document.querySelector('.categorias');
   const selector = document.querySelector('.seletor');
-  const optionItems = document.querySelectorAll('.option');
 
   let isDragging = false;
   let startPosX = 0;
@@ -77,3 +76,96 @@ function Define_Categoria(){
       Direciona_Categoria('Hortalicas');
     });
 }
+
+function showSearch() {
+  const searchContainer = document.getElementById('search-container');
+  const textField = document.getElementById('search')
+  const BotaoVolta = document.getElementById('voltaS')
+  const resultContainer = document.getElementById('results-container')
+  
+  searchContainer.addEventListener('click', () =>{
+    
+    searchContainer.style.top = '0';
+    searchContainer.style.position = 'fixed';
+    searchContainer.style.backgroundColor = '#121111';
+    searchContainer.style.height = '100%';
+    
+    
+    textField.style.right = '0';
+    textField.style.position = 'relative';
+    textField.style.width = '80%';
+    textField.style.height = '5vh';
+    textField.style.margin = '10px';
+
+    BotaoVolta.style.display = 'block';
+    BotaoVolta.style.position = 'relative';
+    BotaoVolta.style.left = '0';
+
+    resultContainer.style.display = 'block';
+  })
+
+
+}
+
+function hideSearch() {
+    var novaPagina = '/redirecionar';
+    window.location.href = novaPagina;
+  }
+
+
+function getSearchTerm() {
+    const textField = document.getElementById('search');
+    return textField.value;
+  }
+
+function performSearch() {
+    const searchTerm = getSearchTerm();
+    sendSearchRequest(searchTerm);
+  }
+
+function sendSearchRequest(searchTerm) {
+    $.ajax({
+      url: `/search?termo=${searchTerm}`,
+      method: 'GET',
+      success: handleSearchSuccess,
+      error: handleSearchError,
+    });
+  }
+  
+  function handleSearchSuccess(data) {
+    const resultsList = document.getElementById('results');
+    const result_container = document.getElementById('results-container') 
+    resultsList.innerHTML = '';
+
+    const existingMessage = result_container.querySelector('p');
+    if (existingMessage) {
+      existingMessage.remove();
+    }
+
+    if (data && Array.isArray(data)) {
+
+      // Cria um novo array apenas com os valores do campo "Nome"
+      const nomes = data.map(item => item.Nome);
+      nomes.forEach(nome => {
+        const listItem = document.createElement('li');
+        listItem.textContent = nome;
+        resultsList.appendChild(listItem);
+      });
+    } else if (data && data.message){
+      // Adicione uma mensagem caso nenhum resultado seja encontrado
+      const messageItem = document.createElement('p');
+      messageItem.textContent = data.message;
+      result_container.appendChild(messageItem);
+    }else {
+      // Se não houver resultados ou mensagem
+      const noResultsItem = document.createElement('li');
+      noResultsItem.textContent = 'Nenhum resultado encontrado ou mensagem disponível.';
+      resultsList.appendChild(noResultsItem);
+    }
+  }
+
+
+  function handleSearchError(error) {
+    console.error(error);
+    // Aqui você pode adicionar lógica para lidar com erros, como exibir uma mensagem de erro na interface do usuário.
+  }

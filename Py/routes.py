@@ -48,3 +48,11 @@ def renderizar_pagina_da_planta(id):
 
     return render_template('Planta.html', Infos_da_Planta_json=planta_info, id=id)
 
+@app.route('/search', methods=['GET'])
+def search():
+    search_term = request.args.get('termo')
+
+    search_results = perform_search(search_term)
+
+    # Retorna os resultados como JSON
+    return search_results

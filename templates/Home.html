@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Master.css')}}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>Guia das Plantas</title>
 </head>
 <body>
@@ -24,10 +25,18 @@
             </nav>
         </div>
     </div>
-    <content>
-        <form>
-            <input type="text" id="barrap" placeholder="Digite o Nome de Sua Planta">
-        </form>
+    <content id="conteudoHome">
+        <div  class="search-container" id="search-container">
+            <div id = "input-container">
+                <div id="voltaS" onclick="hideSearch()">
+                    <img src="{{ url_for('static', filename='images/voltar.png')}}" width="50px" height="50px">
+                </div>
+                <input type="text" id="search" name="search" placeholder="Digite o Nome de Sua Planta" onclick="showSearch()" oninput="performSearch()">
+            </div>
+            <div class="results-container" id="results-container">
+                <ul id="results"></ul>
+            </div>
+        </div>
         <div class="seletor-container">
             <div class="seletor">
                 <div class="categorias">

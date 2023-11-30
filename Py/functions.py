@@ -69,9 +69,24 @@ def Planta_Por_Nome(id):
         else:
             return jsonify({'mensagem': 'Planta não encontrada'}), 404
 
+
+def perform_search(search_term):
+    mongo = PyMongo(app)
+    if mongo.db:
+      
+        plantas = mongo.db.Plantus
         
-        
-        
+    if search_term and search_term.strip():
+        # Realiza a pesquisa no MongoDB
+        results = plantas.find({'Nome': {'$regex': f'^{search_term}', '$options': 'i'}})
+
+        # Converte os resultados para uma lista e os envia como JSON
+        result_list = list(results)
+        return jsonify(result_list)
+    else:
+        # Se o termo de pesquisa estiver vazio, retorna uma mensagem ou algo apropriado
+        return jsonify({'message': 'Digite o Nome da Planta!'})
+
         
         
 
