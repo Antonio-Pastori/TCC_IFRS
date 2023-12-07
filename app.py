@@ -4,11 +4,9 @@ from flask_pymongo import PyMongo
 app = Flask(__name__)
 
 app.config["SESSION_PERMANENT"] = False
-app.config['MONGO_URI'] = "mongodb+srv://UsuarioPlantVitae:7mcbpw6Cg8TksYpW@plantvitae.ecf84x6.mongodb.net/PlantVitae?retryWrites=true&w=majority"
+app.config['MONGO_URI'] = "mongodb+srv://usuario:UsuarioPlantVitae@plantvitae.ecf84x6.mongodb.net/PlantVitae?retryWrites=true&w=majority"
 
 mongo = PyMongo(app)
-
-
 
 from Py.routes import *
 

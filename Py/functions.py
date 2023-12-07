@@ -1,11 +1,13 @@
 from flask_pymongo import PyMongo
-from flask import render_template, request, make_response, jsonify
+from flask import jsonify
 from run import app
 
 
 def plantas_por_categoria(categoria):
     mongo = PyMongo(app)
-    if mongo.db:
+    if mongo.db is not None:
+
+        
         # Atribui sua coleção a uma variável
         sua_colecao = mongo.db.Plantus
 
@@ -40,7 +42,7 @@ def criar_novo_link(id_imagem):
 
 def Planta_Por_Nome(id):
     mongo = PyMongo(app)
-    if mongo.db:
+    if mongo.db is not None:
         # Atribui sua coleção a uma variável
         sua_colecao = mongo.db.Plantus
 
@@ -72,7 +74,7 @@ def Planta_Por_Nome(id):
 
 def perform_search(search_term):
     mongo = PyMongo(app)
-    if mongo.db:
+    if mongo.db is not None:
       
         plantas = mongo.db.Plantus
         

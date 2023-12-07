@@ -149,6 +149,9 @@ function sendSearchRequest(searchTerm) {
       nomes.forEach(nome => {
         const listItem = document.createElement('li');
         listItem.textContent = nome;
+        listItem.onclick = function(){
+          paginaPlanta(nome);
+        }
         resultsList.appendChild(listItem);
       });
     } else if (data && data.message){
@@ -168,4 +171,19 @@ function sendSearchRequest(searchTerm) {
   function handleSearchError(error) {
     console.error(error);
     // Aqui você pode adicionar lógica para lidar com erros, como exibir uma mensagem de erro na interface do usuário.
+  }
+
+  function paginaPlanta(nome){
+    fetch(`/api/planta/${nome}`)
+     .then(response => {
+         if (!response.ok) {
+             throw new Error('Erro na solicitação. Código do status: ' + response.status);
+         }
+         return response.json();
+     })
+     .then(plantaInfo => {
+         // Redireciona para a página de detalhes da planta, passando as informações como parâmetro de consulta
+         window.location.href = `/planta/${nome}?infos=${JSON.stringify(plantaInfo)}`;
+     })
+     .catch(error => console.error("Erro ao obter dados:", error));
   }

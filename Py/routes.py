@@ -1,7 +1,7 @@
 from Py.functions import *
 from app import app
-from flask import Flask, render_template, redirect, url_for
-from flask_pymongo import PyMongo
+from flask import render_template, redirect, url_for, request
+
 import json
 
 
@@ -32,7 +32,7 @@ def buscar_plantas_por_categoria(categoria):
 @app.route("/api/planta/<id>")
 def Buscar_Infos_da_Planta(id):
         Infos_da_Planta = Planta_Por_Nome(id)
-        if Infos_da_Planta:
+        if Infos_da_Planta is not None:
             return jsonify(Infos_da_Planta)
         else:
             return jsonify({'mensagem': 'Planta não encontrada'}), 404
