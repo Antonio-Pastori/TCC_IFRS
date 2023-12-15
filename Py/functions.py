@@ -1,7 +1,7 @@
 from flask_pymongo import PyMongo
 from flask import jsonify
 from run import app
-
+import random
 
 def plantas_por_categoria(categoria):
     mongo = PyMongo(app)
@@ -90,5 +90,32 @@ def perform_search(search_term):
         return jsonify({'message': 'Digite o Nome da Planta!'})
 
         
-        
+def Quantidade_Plantas():
+    mongo = PyMongo(app)
+    if mongo.db is not None:
+        plantas = mongo.db.Plantus
+
+        todas_as_plantas = plantas.count_documents({"_id": {"$nin": [0, 1]}})
+
+    return todas_as_plantas
+
+def Sortear_Planta(total):
+    mongo = PyMongo(app)
+    if mongo.db is not None:
+        plantas = mongo.db.Plantus
+        id_sorteado = random.randint(2, total)
+        Planta_Sorteada = plantas.find_one({"_id": str(id_sorteado)})
+        id_imagem = extrair_id_do_link(Planta_Sorteada['Imagem'])
+        if Planta_Sorteada:
+             Sugestao_Planta = {
+                'Nome': Planta_Sorteada['Nome'],
+                'Imagem': criar_novo_link(id_imagem)
+             }
+    return Sugestao_Planta
+
+
+
+            
+    
+
 

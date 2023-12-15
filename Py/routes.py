@@ -17,7 +17,14 @@ def redirecionar():
 
 @app.route('/Home')
 def Home():
-    return render_template('Home.html')
+    total = Quantidade_Plantas()
+    sugestao = Sortear_Planta(total)
+    
+    # Verificar se é uma requisição AJAX
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return jsonify(sorteada=sugestao)
+    else:
+        return render_template('Home.html', sorteada=sugestao)
 
 @app.route('/categorias/<categoria>')
 def buscar_plantas_por_categoria(categoria):

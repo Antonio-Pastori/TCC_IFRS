@@ -187,3 +187,33 @@ function sendSearchRequest(searchTerm) {
      })
      .catch(error => console.error("Erro ao obter dados:", error));
   }
+
+function obterPlantaAleatoria() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+          var resposta = JSON.parse(xhr.responseText);
+          Planta_Aleatoria(resposta.sorteada);
+      }
+  };
+
+  xhr.open('GET', '/Home', true);
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.send();
+}
+
+function Planta_Aleatoria(sorteada) {
+  var nome_planta = sorteada.Nome;
+  var imagem_sorteada = sorteada.Imagem;
+
+  document.getElementById('NomePlantaSorteada').innerHTML = nome_planta;
+  var imagemPlanta = document.getElementById('diario');
+    imagemPlanta.style.backgroundImage = 'url(' + imagem_sorteada + ')';
+  imagemPlanta.onclick = function(){
+    paginaPlanta(nome_planta);
+  }
+}
+
+  
+
+

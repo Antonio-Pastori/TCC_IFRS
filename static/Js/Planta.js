@@ -64,8 +64,6 @@ function Pega_Infos(Infos_da_Planta_json){
 }
 
 
-function voltar(Categoria){
-    var categoria = Categoria;
-
-    window.location.href = '/categorias/' + categoria;
+function voltar(){
+    window.location.href = '/redirecionar';
 }
