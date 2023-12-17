@@ -16,30 +16,36 @@
     </div>
     <div id="tudo">
         <div id="NomeP">
-            <p id="nomePlanta">Bambu-da-Sorte</p>
+            <p id="nomePlanta"></p>
         </div>
         <div id="conteudo">
-            <h2>Geral</h2>
-            <div id="dificuldade">
-                <p>Dificuldade:</p>
-                <div class="bola"></div>
-                <div class="bola"></div>
-                <div class="bola"></div>
-                <div class="bola"></div>
-                <div class="bola"></div>
-                <div class="bola"></div>
-                <div class="bola"></div>
-                <div class="bola"></div>
-                <div class="bola"></div>
-                <div class="bola"></div>
+            <div class="partic">
+                <h2 class="Tit">Geral</h2>
+                <div class="itensPlanta" id="difi">
+                    <p class="subT">Dificuldade:</p>
+                </div>
+                <div class="itensPlanta">
+                    <p class="subT">Nome Científico: <p id="nomeC"></p></p>
+                </div>
             </div>
-            <p>Nome Científico:<p id="nomeC"></p></p>
-            <h2>Cuidados:</h2>
-            <p>Solo:<p id="solo"></p></p>
-            <p>Água:<p id="agua"></p>
-            <p>Adubação:<p id="adubo"></p>
-            <p>Iluminação:<p id="luz"></p></p>
-            <p>Ambiente:<p id="ambiente"></p></p>
+            <div class="partic">
+                <h2 class="Tit">Cuidados</h2>
+                <div class="itensPlanta">
+                    <p class="subT">Solo:<p id="solo"></p></p>
+                </div>
+                <div class="itensPlanta">
+                    <p class="subT">Água:<p id="agua"></p>
+                </div>
+                <div class="itensPlanta">
+                    <p class="subT">Adubação:<p id="adubo"></p>
+                </div>
+                <div class="itensPlanta">
+                    <p class="subT">Iluminação:<p id="luz"></p></p>
+                </div>
+                <div class="itensPlanta">
+                    <p class="subT">Ambiente:<p id="ambiente"></p></p>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -47,7 +53,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
-            Json_Infos = {{ Infos_da_Planta_json | tojson | safe }}
+            Json_Infos = {{ Infos_da_Planta_json | tojson | safe }};
             Pega_Infos(Json_Infos);
             
         });

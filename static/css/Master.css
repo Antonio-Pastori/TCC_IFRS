@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500&display=swap');
+
 @media (max-width: 768px) {
 
 html{
@@ -45,7 +47,7 @@ content{
 
 h1{
     color: white;
-    font-family: sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 15vw;
 }
 
@@ -118,7 +120,7 @@ h1{
 }
 .results-container p{
   color: white;
-  font-family: sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   padding-left: 3%;
 }
 
@@ -133,7 +135,7 @@ h1{
 #results li{
   border-bottom: white solid 1px;
   padding: 4%;
-  font-family: sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 #results li:active{
@@ -143,7 +145,9 @@ h1{
 #perfilside{
   width: 70px;
   height: 70px;
-  background-color: gray;
+  background-image: url(../images/1.jpeg);
+  background-repeat: none;
+  background-size: cover;
   border-radius: 50px;
 }
 
@@ -168,6 +172,7 @@ h1{
 }
 
 #conteudoside{
+  font-family: 'Plus Jakarta Sans', sans-serif;
   width: 70vw;
   display: flex;
   flex-direction: column;
@@ -194,6 +199,10 @@ h1{
   color: white;
 }
 
+#conteudoside ul li:active{
+  background-color: #545454;
+}
+
 
 
 header{
@@ -210,7 +219,9 @@ header{
 
 #perfil{
     width: 80px;
-    background-color: gray;
+    background-image: url(../images/1.jpeg);
+    background-repeat: none;
+    background-size: cover;
     border-radius: 50px;
 }
 
@@ -242,24 +253,30 @@ header{
     width: 90px;
     height: 90px;
     margin-right: 10px;
-    font-family: sans-serif;
+    border-radius: 5px;
+  }
+
+
+  .DivText{
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+    font-size: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 5px;
-    color: rgba(255, 255, 255, 1);
-  }
-
-  .textop{
-    color: rgba(255, 255, 255, 1);
-    opacity: 100%;
+    margin: 0;
   }
 
   #Flores{
     background-image: url("../images/Flores.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    
     
   }
   #Ornamentais{
@@ -304,14 +321,16 @@ header{
   }
 
   #diariocontent{
-    opacity: 100%;
     height: 100%;
-    font-family: sans-serif;
-    font-size: 12vw;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 8vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+  }
+
+  .textdir{
+    background-color: rgba(0, 0, 0, 0.6);
   }
 
   /*Lista de Planta*/
@@ -344,7 +363,7 @@ header{
     color: white;
     margin: 0;
     margin-top: 2vh;
-    font-family: sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 4vw;
      white-space: nowrap;
      overflow: hidden;
@@ -356,8 +375,6 @@ header{
   #conteudo{
     display: flex;
     flex-direction: column;
-   
-    
     color: white;
     font-family: sans-serif;
     background-color: #121111;
@@ -365,16 +382,7 @@ header{
     position: relative;
     padding-left: 10px;
     padding-right: 10px;
-
-    
-  }
-
-  h2{
-    font-size: 50px;
-  }
-
-  p{
-    font-size: 25px;
+    padding-top: 10%;
   }
 
   #fotoplanta{
@@ -388,18 +396,29 @@ header{
 
   }
 
-  #dificuldade{
+  .itensPlanta{
     display: flex;
+    flex-direction: column;
     width: 100%;
-    
-    align-items: center;
+    margin-top: 10%;
+
   }
+
+  #difi{
+    flex-direction: row;
+  } 
 
   .bola{
     width: 17px;
     height: 17px;
     border-radius: 20px;
     border: 3px solid green;
+  }
+
+  #bolas{
+    display: flex;
+    width: 65%;
+    justify-content: space-around;
   }
 
 #NomeP{ 
@@ -409,7 +428,7 @@ header{
 
 #NomeP p{
   color: white;
-  font-family: sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 5.5vh;
   
  
@@ -429,5 +448,18 @@ header{
   height: 100vh;
 
 }
+
+.subT{
+  font-size: 5vw;
+  margin: 0;
+  
+}
+
+.Tit{
+  font-size: 10vw;
+  margin: 0;
+}
+
+
 
 }

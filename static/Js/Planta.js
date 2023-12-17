@@ -9,16 +9,6 @@ function Pega_Infos(Infos_da_Planta_json){
     var dificuldade = Infos_da_Planta_json.Dificuldade;
     var adubacao = Infos_da_Planta_json.Cuidados['1'];
     var regacao = Infos_da_Planta_json.Cuidados['0'];
-   
-    console.log("Nome da Planta:", nomePlanta);
-    console.log('Nome Científico:', nomeC)
-    console.log("Luz:", luz);
-    console.log("Solo:", solo);
-    console.log("Ambiente:", ambiente);
-    console.log("Imagem:", imagemP)
-    
-    
-   
 
     document.getElementById('nomePlanta').innerHTML = nomePlanta;
     document.getElementById('luz').innerHTML = luz;
@@ -32,10 +22,7 @@ function Pega_Infos(Infos_da_Planta_json){
     if(imagemPlanta)
         imagemPlanta.style.backgroundImage = 'url(' + imagemP + ')';
 
-    const dificuldadeDiv = document.getElementById('dificuldade');
-
-    // Limpa as bolinhas existentes
-    dificuldadeDiv.innerHTML = '<p>Dificuldade:</p>';
+    const dificuldadeDiv = document.getElementById('difi');
 
     // Adiciona bolinhas com gradiente de cores
     for (let i = 0; i < 10; i++) {
