@@ -72,9 +72,6 @@ function Define_Categoria(){
     Suculentas.addEventListener('click', () => {
       Direciona_Categoria('Suculentas');
     });
-    Hortalicas.addEventListener('click', () => {
-      Direciona_Categoria('Hortalicas');
-    });
 }
 
 function showSearch() {

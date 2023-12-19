@@ -11,8 +11,6 @@ function Pega_Infos(Infos_da_Planta_json){
     var regacao = Infos_da_Planta_json.Cuidados['0'];
     var doencasPlanta = Infos_da_Planta_json.Doencas;
 
-    console.log(doencas);
-
     document.getElementById('nomePlanta').innerHTML = nomePlanta;
     document.getElementById('luz').innerHTML = luz;
     document.getElementById('solo').innerHTML = solo;
