@@ -54,7 +54,7 @@ h1{
 #Entrar{
     border: 0;
     border-radius: 5px;
-    background-color: green;
+    background-color: #008000;
     color: white;
     font-family: sans-serif;
     font-size: 25px;
@@ -229,7 +229,7 @@ header{
 
 .seletor-container {
     overflow: hidden;
-    width: 95%; /* Largura visível do seletor */
+    width: 95%; 
     margin-top: 3%;
   }
   
@@ -242,7 +242,7 @@ header{
   }
 
   .seletor::-webkit-scrollbar {
-    display: none; /* Remover a barra de rolagem no Chrome, Safari, etc. */
+    display: none; 
   }
   
   .categorias {
@@ -340,7 +340,7 @@ header{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
-    justify-content: center; /* Alinhar itens horizontalmente no centro */
+    justify-content: center; 
     align-items: center;
     
   }

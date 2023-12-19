@@ -143,8 +143,6 @@ function sendSearchRequest(searchTerm) {
     }
 
     if (data && Array.isArray(data)) {
-
-      // Cria um novo array apenas com os valores do campo "Nome"
       const nomes = data.map(item => item.Nome);
       nomes.forEach(nome => {
         const listItem = document.createElement('li');
@@ -155,12 +153,10 @@ function sendSearchRequest(searchTerm) {
         resultsList.appendChild(listItem);
       });
     } else if (data && data.message){
-      // Adicione uma mensagem caso nenhum resultado seja encontrado
       const messageItem = document.createElement('p');
       messageItem.textContent = data.message;
       result_container.appendChild(messageItem);
     }else {
-      // Se não houver resultados ou mensagem
       const noResultsItem = document.createElement('li');
       noResultsItem.textContent = 'Nenhum resultado encontrado ou mensagem disponível.';
       resultsList.appendChild(noResultsItem);

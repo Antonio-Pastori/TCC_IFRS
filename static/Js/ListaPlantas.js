@@ -19,7 +19,7 @@ function Entrar_Home(){
 }
 
 function Direciona_Planta(id){
-     // Faz uma solicitação AJAX para obter as informações da planta
+     
      fetch(`/api/planta/${id}`)
      .then(response => {
          if (!response.ok) {
@@ -28,7 +28,7 @@ function Direciona_Planta(id){
          return response.json();
      })
      .then(plantaInfo => {
-         // Redireciona para a página de detalhes da planta, passando as informações como parâmetro de consulta
+         
          window.location.href = `/planta/${id}?infos=${JSON.stringify(plantaInfo)}`;
      })
      .catch(error => console.error("Erro ao obter dados:", error));

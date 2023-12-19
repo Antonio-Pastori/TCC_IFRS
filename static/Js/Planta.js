@@ -9,6 +9,9 @@ function Pega_Infos(Infos_da_Planta_json){
     var dificuldade = Infos_da_Planta_json.Dificuldade;
     var adubacao = Infos_da_Planta_json.Cuidados['1'];
     var regacao = Infos_da_Planta_json.Cuidados['0'];
+    var doencasPlanta = Infos_da_Planta_json.Doencas;
+
+    console.log(doencas);
 
     document.getElementById('nomePlanta').innerHTML = nomePlanta;
     document.getElementById('luz').innerHTML = luz;
@@ -17,6 +20,7 @@ function Pega_Infos(Infos_da_Planta_json){
     document.getElementById('nomeC').innerHTML = nomeC;
     document.getElementById('agua').innerHTML = regacao;
     document.getElementById('adubo').innerHTML = adubacao;
+    
 
     var imagemPlanta = document.getElementById('fotoplanta')
     if(imagemPlanta)
@@ -24,12 +28,12 @@ function Pega_Infos(Infos_da_Planta_json){
 
     const dificuldadeDiv = document.getElementById('difi');
 
-    // Adiciona bolinhas com gradiente de cores
+    
     for (let i = 0; i < 10; i++) {
       const bola = document.createElement('div');
       bola.className = 'bola';
 
-      // Calcula a cor com base na dificuldade (de verde a vermelho)
+     
       const cor = `rgb(${i * 25}, ${255 - (i * 25)}, 0)`;
 
       bola.style.borderColor = cor; // Define a cor da borda
@@ -47,6 +51,17 @@ function Pega_Infos(Infos_da_Planta_json){
             cuidadosContainer.appendChild(paragrafo);
         }
     }
+
+    const ulElement = document.getElementById('doencas');
+
+      ulElement.innerHTML = '';
+
+     
+      doencasPlanta.forEach(item => {
+        const liElement = document.createElement('li');
+        liElement.textContent = item;
+        ulElement.appendChild(liElement);
+      });
     
 }
 

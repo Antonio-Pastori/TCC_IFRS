@@ -4,9 +4,6 @@ from flask import render_template, redirect, url_for, request
 
 import json
 
-
-
-
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -20,7 +17,7 @@ def Home():
     total = Quantidade_Plantas()
     sugestao = Sortear_Planta(total)
     
-    # Verificar se é uma requisição AJAX
+  
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         return jsonify(sorteada=sugestao)
     else:
@@ -47,10 +44,10 @@ def Buscar_Infos_da_Planta(id):
 
 @app.route("/planta/<id>")
 def renderizar_pagina_da_planta(id):
-     # Obtém os parâmetros de consulta
+  
     infos_json_str = request.args.get('infos', '{}')
 
-    # Converte a string JSON para um objeto Python
+
     planta_info = json.loads(infos_json_str)
 
     return render_template('Planta.html', Infos_da_Planta_json=planta_info, id=id)
@@ -61,5 +58,5 @@ def search():
 
     search_results = perform_search(search_term)
 
-    # Retorna os resultados como JSON
+    
     return search_results
